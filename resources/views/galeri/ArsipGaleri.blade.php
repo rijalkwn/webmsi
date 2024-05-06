@@ -52,4 +52,8 @@
     </div>
 </div>
 @endsection
+<script>document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.hidden').style.display = 'none';
+});
+</script>
 

@@ -76,7 +76,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="admin-ArsipInbox">
+                <a class="nav-link" href="admin-ArsipKontak">
                     <i class="fa fa-inbox"></i>
                     <span>Inbox</span></a>
             </li>

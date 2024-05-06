@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
+    //beranda
+    public function beranda()
+    {
+        $berita = Berita::orderBy('created_at', 'desc')->paginate(6);
+        $kepengurusan = kepengurusan::where('jabatan', 'like', '%Ketua%')->get();
+        $galeri = Galeri::orderBy('created_at', 'desc')->paginate(6);
+
+        return view('beranda', compact('berita', 'kepengurusan', 'galeri'));
+    }
     //berita
     public function berita()
     {

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!DOCTYPE html>
-<html lang="en">
 <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -27,16 +23,25 @@
             <h3 class="text-center text-uppercase text-dark fs-2">galeri</h3>
             <hr class="border border-success opacity-50 w-100"></hr>
             <div class="row">
-                @foreach($galeri as $item)
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img class="card-img-top" src="{{ asset('assets/galeri/'.$item->foto) }}" alt="{{ $item->judul }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ Illuminate\Support\Str::of($item->judul)->limit(80, $end='...') }}</h5>
+                @if ($galeri->isEmpty())
+
+                    <div class="col-md-12">
+                        <div class="alert alert-danger text-center" role="alert">
+                            Galeri Belum Tersedia
                         </div>
                     </div>
-                </div>
-                @endforeach
+                @else
+                    @foreach($galeri as $item)
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="{{ asset('assets/galeri/'.$item->foto) }}" alt="{{ $item->judul }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ Illuminate\Support\Str::of($item->judul)->limit(80, $end='...') }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                @endif
             </div>
             <div class="d-flex justify-content-center mt-4">
                 {{ $galeri->links() }}
@@ -44,4 +49,9 @@
         </div>
     </section>
 @endsection
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.hidden').style.display = 'none';
+});
 
+</script>

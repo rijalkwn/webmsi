@@ -36,7 +36,6 @@
                         </td>
                         <td>{{ $item->jabatan }}</td>
                         <td class="text-center">
-                            {{-- edit dan hapus berita --}}
                             <div class="btn-group" role="group" aria-label="Aksi">
                                 <a href="{{ route('kepengurusan.edit', ['id' => $item->id]) }}" class="btn btn-warning">Edit</a>
                                 <a href="{{ route('kepengurusan.hapus', ['id' => $item->id]) }}" class="btn btn-danger ms-3" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
@@ -50,27 +49,11 @@
     {{ $kepengurusan->links()}}
 </div>
 
-{{-- Konfirmasi Hapus Kepengurusan
-<div class="modal fade" id="HapusKepengurusan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Hapus Data</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Apakah Anda yakin ingin menghapus data ini?
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                <a class="btn btn-danger" href="{{ route('kepengurusan.hapus', ['id' => $item->id]) }}" id="hapusKepengurusanButton">Hapus</a>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 
 
 @endsection
+<script>document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.hidden').style.display = 'none';
+});
+</script>

@@ -16,7 +16,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\KepengurusanController;
 use App\Http\Controllers\GaleriController;
-use App\Http\Controllers\InboxController;
+use App\Http\Controllers\KontakController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +33,9 @@ Route::get('/test-koneksi-database', function() {
 	}
 });
 
-Route::get('/', function () {
-    return view('master');
-});
+//beranda
+Route::get('/', [PublicController::class, 'beranda'])->name('beranda');
+Route::get('/beranda', [PublicController::class, 'beranda'])->name('beranda');
 
 //berita
 Route::get('/berita', [PublicController::class, 'berita'])->name('berita');
@@ -47,17 +47,10 @@ Route::get('/kepengurusan', [PublicController::class, 'kepengurusan'])->name('ke
 //galeri
 Route::get('/galeri', [PublicController::class, 'galeri'])->name('galeri');
 
-Route::get('/kontak', function () {
-    return view('kontak');
-})->name('kontak');
-
 Route::get('/tentang-kami', function () {
     return view('tentang_kami');
 })->name('tentang.kami');
 
-Route::get('/', function () {
-    return view('master');
-})->name('halaman.utama');
 
 
 ////////////////////////////////////////////////////////////////////
@@ -96,6 +89,9 @@ Route::get('admin-EditGaleri{id}', [GaleriController::class, 'edit'])->middlewar
 Route::put('admin-updateGaleri/{id}', [GaleriController::class, 'update'])->middleware('isLogin')->name('galeri.update');
 Route::get('admin-hapusGaleri/{id}', [GaleriController::class, 'delete'])->middleware('isLogin')->name('galeri.hapus');
 
-//INBOX
-Route::get('admin-ArsipInbox', [InboxController::class, 'index'])->middleware('isLogin')->name('ArsipInbox');
-Route::get('admin-hapusInbox/{id}', [InboxController::class, 'delete'])->middleware('isLogin')->name('inbox.hapus');
+//KONTAK
+Route::get('admin-ArsipKontak', [KontakController::class, 'index'])->middleware('isLogin')->name('ArsipKontak');
+Route::get('/admin-ArsipKontak{id}', [KontakController::class, 'show'])->middleware('isLogin')->name('kontak.detail');
+Route::get('kontak', [KontakController::class, 'create'])->name('kontak');
+Route::post('storeKontak', [KontakController::class, 'store'])->name('kontak.store');
+Route::get('admin-hapusKontak/{id}', [KontakController::class, 'delete'])->middleware('isLogin')->name('kontak.hapus');

@@ -43,18 +43,18 @@
                         <label for="jabatan" class="form-label">Jabatan :</label><br>
                         <select class="form-select" aria-label="Default select example" name="jabatan">
                             <option value="" selected>--Pilih Jabatan--</option>
-                            <option value="pembina">PEMBINA</option>
-                            <option value="pengawas">PENGAWAS</option>
-                            <option value="ketua">KETUA</option>
-                            <option value="sekretaris">SEKRETARIS</option>
-                            <option value="bendahara">BENDAHARA</option>
-                            <option value="pelaksanastafprogram">PELAKSANA STAF PROGRAM</option>
-                            <option value="inputor">INPUTOR</option>
-                            <option value="finance">FINANCE</option>
-                            <option value="korkad1">KORKAD 1</option>
-                            <option value="korkad2">KORKAD 2</option>
-                            <option value="korkad3">KORKAD 3</option>
-                            <option value="kader">KADER</option>
+                            <option value="Pembina">PEMBINA</option>
+                            <option value="Pengawas">PENGAWAS</option>
+                            <option value="Ketua">KETUA</option>
+                            <option value="Sekretaris">SEKRETARIS</option>
+                            <option value="Bendahara">BENDAHARA</option>
+                            <option value="Pelaksanastafprogram">PELAKSANA STAF PROGRAM</option>
+                            <option value="Inputor">INPUTOR</option>
+                            <option value="Finance">FINANCE</option>
+                            <option value="Korkad1">KORKAD 1</option>
+                            <option value="Korkad2">KORKAD 2</option>
+                            <option value="Korkad3">KORKAD 3</option>
+                            <option value="Kader">KADER</option>
                         </select>
 
                     </div>

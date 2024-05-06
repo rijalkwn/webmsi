@@ -23,12 +23,12 @@
 
 
         <!-- Masthead-->
-        <header class="masthead">
+        {{-- <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading" style="margin-bottom:3%;"></div>
                 <div class="masthead-heading text-uppercase" style="margin-top:-5%;  font-size:3vw;">Kabupaten Semarang</div>
             </div>
-        </header>
+        </header> --}}
 
         @yield('konten')
 
